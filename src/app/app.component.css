@@ -1,0 +1,25 @@
+.app-tabs__tabs {
+    justify-content: center;
+}
+
+.app-tabs__table {
+    display: flex;
+    justify-content: center;
+}
+
+.app-tabs__table-item,
+.app-tabs__table-title {
+    text-align: center;
+    padding-right: 40px;
+    white-space: nowrap;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.app-tabs__table-title {
+    padding-top: 40px;
+    font-weight: bold;
+}

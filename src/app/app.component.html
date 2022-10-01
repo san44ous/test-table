@@ -1,0 +1,49 @@
+<ul class="nav nav-tabs app-tabs__tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" (click)="updateData('income', 0)" id="income-tab" data-toggle="tab" role="tab" aria-controls="income" aria-selected="true">Income</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="updateData('outcome', 1)" id="outcome-tab" data-toggle="tab" role="tab" aria-controls="outcome" aria-selected="false">Outcome</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="updateData('loan', 2)" id="loan-tab" data-toggle="tab" role="tab" aria-controls="loan" aria-selected="false">Loans</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="updateData('investment', 3)" id="investment-tab" data-toggle="tab" role="tab" aria-controls="investment" aria-selected="false">Investments</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="income" role="tabpanel" aria-labelledby="income-tab">
+        <ng-container [ngTemplateOutlet]="userData"></ng-container>
+    </div>
+    <div class="tab-pane fade" id="outcome" role="tabpanel" aria-labelledby="outcome-tab">
+        <ng-container [ngTemplateOutlet]="userData"></ng-container>
+    </div>
+    <div class="tab-pane fade" id="loan" role="tabpanel" aria-labelledby="loan-tab">
+        <ng-container [ngTemplateOutlet]="userData"></ng-container>
+    </div>
+    <div class="tab-pane fade" id="investment" role="tabpanel" aria-labelledby="investment-tab">
+        <ng-container [ngTemplateOutlet]="userData"></ng-container>
+    </div>
+</div>
+
+<ng-template #userData>
+    <div class="app-tabs__table">
+        <div class="app-tabs__first-column">
+            <div class="app-tabs__table-title">Name</div>
+            <hr>
+            <ng-container *ngFor="let name of names">
+                <div class="app-tabs__table-item">{{name}}</div>
+                <hr>
+            </ng-container>
+        </div>
+        <div class="app-tabs__second-column">
+            <div class="app-tabs__table-title">Acount</div>
+            <hr>
+            <ng-container *ngFor="let acount of acounts">
+                <div class="app-tabs__table-item">{{acount}}</div>
+                <hr>
+            </ng-container>
+        </div>
+    </div>
+</ng-template>
